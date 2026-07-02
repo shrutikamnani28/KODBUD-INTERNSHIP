@@ -1,0 +1,42 @@
+Task 2:
+Create a Number Guessing Game
+Explanation:
+• Generate a random number between 1 and 100 using random module
+• Ask user to guess until correct
+• Show hints like "Too high" or "Too low"
+
+Code:
+import random
+
+secret = random.randint(1, 100)
+attempts = 0
+
+print("Guess the number between 1 and 100")
+
+while True:
+    guess = int(input("Enter your guess: "))
+    attempts += 1
+
+    if guess < secret:
+        print("Too low!")
+
+    elif guess > secret:
+        print("Too high!")
+
+    else:
+        print("Congratulations! You guessed correctly.")
+        print("Attempts:", attempts)
+        break
+
+
+OUTPUT:
+========= RESTART: C:/Users/SHRUTI/OneDrive/Pictures/Documents/tas2.py =========
+Guess the number between 1 and 100
+Enter your guess: 6
+Too low!
+Enter your guess: 54
+Too low!
+Enter your guess: 99
+Too high!
+Enter your guess: 23
+Too low!
