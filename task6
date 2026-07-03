@@ -1,0 +1,23 @@
+Task 6: YouTube Video Downloader
+Explanation:
+• Use the pytube library to download a YouTube video
+• Ask user for video URL and destination folder
+• Add error handling for invalid links
+
+CODE:
+from pytube import YouTube
+
+url = input("Enter YouTube URL: ")
+path = input("Enter destination folder: ")
+
+try:
+    yt = YouTube(url)
+
+    stream = yt.streams.get_highest_resolution()
+
+    stream.download(path)
+
+    print("Download completed!")
+
+except Exception as e:
+    print("Error:", e)
