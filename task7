@@ -1,0 +1,26 @@
+Task 7: Build a Weather App (Console)
+Explanation:
+• Use OpenWeatherMap API
+• Ask user for city name
+• Display temperature, condition, and humidity using requests and json
+
+CODE:
+import requests
+
+api_key = "YOUR_API_KEY"
+
+city = input("Enter city name: ")
+
+url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+
+response = requests.get(url)
+
+data = response.json()
+
+if data["cod"] == 200:
+    print("Temperature:", data["main"]["temp"], "°C")
+    print("Humidity:", data["main"]["humidity"], "%")
+    print("Condition:", data["weather"][0]["description"])
+
+else:
+    print("City not found")
